@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Space Tourism Website solution for frontendmentor.io">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./sass/style.scss">
+  <title>Space Tourism</title>
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="./public/images/shared/logo.svg" alt="">
+    </div>
+
+    <nav>
+      <button class="btn btn-navigation-toggle" aria-expanded="true" aria-controls="navigation-list">
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <ul id="navigation-list" class="list">
+        <li class="list__item">
+          <button class="list__item btn btn-nav active" id="btnHome">
+            <span>01</span>Home
+          </button>
+        </li>
+        <li class="list__item">
+          <button class="list__item btn btn-nav" id="btnDestination">
+            <span>02</span>Destination
+          </button>
+        </li>
+        <li class="list__item">
+          <button class="list__item btn btn-nav" id="btnCrew">
+            <span>03</span>Crew
+          </button>
+        </li>
+        <li class="list__item">
+          <button class="list__item btn btn-nav" id="btnTechnology">
+            <span>04</span>Technology
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="container__text container__text--home">
+      <h5>SO, YOU WANT TO TRAVEL TO</h5>
+      <h1>SPACE</h1>
+      <p>Let’s face it; if you want to go to space, you might as well genuinely go to
+        outer space and not hover kind of on the edge of it. Well sit back, and relax
+        because we’ll give you a truly out of this world experience!</p>
+    </div>
+
+    <div class="container__item">
+      <button type="button" class="btn btn-cta" id="btnExplore">Explore</button>
+    </div>
+
+  </main>
+
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>
