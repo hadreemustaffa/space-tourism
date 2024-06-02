@@ -1,14 +1,25 @@
-:root {
-  $fs-900: 9.375rem;
-  $fs-800: 6.25rem;
-  $fs-700: 3.5rem;
-  $fs-600: 2rem;
-  $fs-500: 1.75rem;
-  $fs-400: 1.125rem;
-  $fs-300: 1rem;
-  $fs-200: 0.875rem;
+@use "./colors" as *;
 
-  $ff-sans-normal: "Barlow", sans-serif;
-  $ff-sans-cond: "Barlow Condensed", sans-serif;
-  $ff-serif: serif;
+:root {
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.75rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1rem;
+  --fs-400: 0.9375rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
 }
+
+$ff-primary: "Barlow", sans-serif;
+$ff-secondary: "Barlow Condensed", sans-serif;
+$ff-tertiary: "Bellefair", serif;
+
+$clr-text-dark: $clr-dark-900;
+$clr-text-light: $clr-light-200;
+$clr-text-white: $clr-light-100;
+
+$clr-bg-dark: $clr-dark-900;
+$clr-bg-navigation: $clr-dark-800;
+$clr-bg-light: $clr-light-200;
+$clr-bg-white: $clr-light-100;

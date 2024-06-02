@@ -1,0 +1,74 @@
+@use "../abstracts/" as *;
+
+.btn {
+  background: transparent;
+  border: transparent;
+  transition: all 0.25s ease;
+
+  &.btn-navigation-toggle {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    z-index: 100;
+    right: 1.5rem;
+    top: 50%;
+    translate: 0 -50%;
+    background-image: url("../../public/images/shared/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    aspect-ratio: 1;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &.btn-nav {
+    position: relative;
+    // transition: all 0.25s ease;
+
+    span {
+      padding-right: 1rem;
+    }
+
+    &.active::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      translate: -50% 0;
+      width: 90%;
+      height: 3px;
+      background-color: $clr-bg-white;
+    }
+
+    @include md {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &.btn-cta {
+    width: 150px;
+    max-width: 150px;
+    height: 150px;
+    max-height: 150px;
+    background-color: $clr-bg-white;
+    border-radius: 100%;
+
+    @include md {
+      width: 244px;
+      max-width: 244px;
+      height: 244px;
+      max-height: 244px;
+    }
+
+    @include lg {
+      width: 275px;
+      max-width: 275px;
+      height: 275px;
+      max-height: 275px;
+    }
+  }
+}

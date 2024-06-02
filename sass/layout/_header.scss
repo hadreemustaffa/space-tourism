@@ -1,0 +1,48 @@
+@use "../abstracts/" as *;
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1.5rem;
+
+  @include md {
+    padding: 0 0 0 2.5rem;
+
+    nav {
+      padding: 0 2.5rem;
+      background-color: $clr-bg-navigation;
+    }
+  }
+}
+
+ul.list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  height: 100vh;
+  padding: min(20rem, 15vh) 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  backdrop-filter: blur(1.5rem);
+  // translate: 100% 0;
+  transition: translate 0.25s ease;
+
+  .btn {
+    padding: 3rem 0;
+  }
+
+  @include md {
+    translate: 0;
+    backdrop-filter: none;
+    flex-direction: row;
+    position: static;
+    height: fit-content;
+    width: auto;
+    padding: 0;
+  }
+}

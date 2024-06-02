@@ -1,0 +1,22 @@
+@use "../abstracts/" as *;
+
+body {
+  background-color: $clr-bg-dark;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background-image: url("../../public/images/home/background-home-mobile.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  @include md {
+    background-image: url("../../public/images/home/background-home-tablet.jpg");
+  }
+  @include lg {
+    background-image: url("../../public/images/home/background-home-desktop.jpg");
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
