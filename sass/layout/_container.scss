@@ -19,8 +19,9 @@
   @include md {
     padding: 2.875rem 2.5rem;
   }
+
   @include lg {
-    padding: 7rem 0;
+    padding: 7rem 2.5rem;
     flex-direction: row;
     text-align: left;
     align-items: end;

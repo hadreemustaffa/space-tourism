@@ -21,7 +21,7 @@ header {
 ul.list {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   width: 70vw;
   height: 100vh;
   padding: min(20rem, 15vh) 2rem;
@@ -29,11 +29,14 @@ ul.list {
   flex-direction: column;
   gap: 2.5rem;
   backdrop-filter: blur(1.5rem);
-  // translate: 100% 0;
-  transition: translate 0.25s ease;
+  transition: right 0.25s ease;
 
   .btn {
     padding: 3rem 0;
+  }
+
+  &[opened] {
+    right: 0;
   }
 
   @include md {

@@ -5,6 +5,10 @@
   border: transparent;
   transition: all 0.25s ease;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &.btn-navigation-toggle {
     width: 24px;
     height: 24px;
@@ -20,6 +24,14 @@
 
     @include md {
       display: none;
+    }
+
+    &[aria-expanded="true"] {
+      background-image: url("../../public/images/shared/icon-close.svg");
+      animation: rotateIconClockwise 0.45s ease;
+    }
+    &[aria-expanded="false"] {
+      animation: rotateIconAntiClockwise 0.45s ease;
     }
   }
 
@@ -70,5 +82,22 @@
       height: 275px;
       max-height: 275px;
     }
+  }
+}
+
+@keyframes rotateIconClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateIconAntiClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
