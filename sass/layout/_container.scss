@@ -9,6 +9,7 @@
   padding: 2.875rem 1.5rem;
   text-align: center;
   max-width: 30rem;
+  margin: 0 auto;
 
   .container__text {
     display: flex;
@@ -17,15 +18,20 @@
   }
 
   @include md {
-    padding: 2.875rem 2.5rem;
+    padding-inline: 0;
+    justify-content: space-between;
+    padding: 5rem 0;
   }
 
   @include lg {
-    padding: 7rem 2.5rem;
+    padding: 7rem 0;
+    grid-row: 2 / 2;
+    grid-column: 2 / 3;
     flex-direction: row;
     text-align: left;
     align-items: end;
-    max-width: 68.75rem;
+    max-width: none;
+    margin: 0;
 
     .container__item {
       display: flex;
@@ -34,10 +40,12 @@
     }
 
     .container__text {
-      flex-basis: 55%;
+      flex-basis: 53%;
+      max-width: 45ch;
+      text-align: justify;
     }
     .container__item {
-      flex-basis: 45%;
+      flex-basis: 47%;
     }
   }
 

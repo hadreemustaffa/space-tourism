@@ -13,6 +13,7 @@ body {
   }
   @include lg {
     background-image: url("../../public/images/home/background-home-desktop.jpg");
+    grid-template-columns: minmax(2.5rem, 13.5rem) auto minmax(2.5rem, 13.5rem);
   }
 }
 

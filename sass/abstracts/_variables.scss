@@ -1,5 +1,3 @@
-@use "./colors" as *;
-
 :root {
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
@@ -9,17 +7,26 @@
   --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
+
+  --clr-dark-900: 230, 35%, 7%;
+  --clr-dark-800: 232, 28%, 10%;
+  --clr-light-200: 231, 77%, 90%;
+  --clr-light-100: 0, 0%, 100%;
 }
 
 $ff-primary: "Barlow", sans-serif;
 $ff-secondary: "Barlow Condensed", sans-serif;
 $ff-tertiary: "Bellefair", serif;
 
-$clr-text-dark: $clr-dark-900;
-$clr-text-light: $clr-light-200;
-$clr-text-white: $clr-light-100;
+$clr-text-dark: hsl(var(--clr-dark-900));
+$clr-text-light: hsl(var(--clr-light-200));
+$clr-text-white: hsl(var(--clr-light-100));
 
-$clr-bg-dark: $clr-dark-900;
-$clr-bg-navigation: $clr-dark-800;
-$clr-bg-light: $clr-light-200;
-$clr-bg-white: $clr-light-100;
+$clr-bg-dark: hsl(var(--clr-dark-900));
+$clr-bg-navigation: hsl(var(--clr-dark-800));
+$clr-bg-light: hsl(var(--clr-light-200));
+$clr-bg-white: hsl(var(--clr-light-100));
+$clr-bg-line: hsl(var(--clr-light-100), 0.25);
+$clr-bg-dimmed: hsl(var(--clr-light-100), 0.05);
+
+$clr-hvr-white: hsl(var(--clr-light-100), 0.15);

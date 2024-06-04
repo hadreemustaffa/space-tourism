@@ -13,8 +13,8 @@
     width: 24px;
     height: 24px;
     position: absolute;
-    z-index: 100;
-    right: 1.5rem;
+    z-index: 200;
+    right: 2.5rem;
     top: 50%;
     translate: 0 -50%;
     background-image: url("../../public/images/shared/icon-hamburger.svg");
@@ -36,27 +36,39 @@
   }
 
   &.btn-nav {
+    display: flex;
     position: relative;
-    // transition: all 0.25s ease;
 
     span {
       padding-right: 1rem;
     }
 
-    &.active::after {
+    &::after {
       content: "";
       position: absolute;
-      left: 50%;
+      left: 0;
       bottom: 0;
-      translate: -50% 0;
-      width: 90%;
+      width: 0;
       height: 3px;
       background-color: $clr-bg-white;
+      transition: width 0.35s ease;
+    }
+
+    &:hover::after,
+    &.active::after {
+      @extend ::after;
+      width: 100%;
     }
 
     @include md {
       span {
         display: none;
+      }
+    }
+
+    @include lg {
+      span {
+        display: block;
       }
     }
   }
@@ -68,6 +80,30 @@
     max-height: 150px;
     background-color: $clr-bg-white;
     border-radius: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: $clr-hvr-white;
+      border-radius: 50%;
+      opacity: 0;
+      transition:
+        opacity 0.35s linear,
+        transform 0.5s ease-in-out;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      transform: scale(1.25);
+    }
 
     @include md {
       width: 244px;
@@ -81,6 +117,7 @@
       max-width: 275px;
       height: 275px;
       max-height: 275px;
+      margin: 0;
     }
   }
 }
