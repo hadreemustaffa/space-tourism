@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Space Tourism Website solution for frontendmentor.io">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/sass/style.scss">
+  <title>Space Tourism</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="/public/images/shared/logo.svg" alt="">
+    </div>
+
+    <nav>
+      <button id="navToggle" class="btn btn-navigation-toggle" aria-expanded="false" aria-controls="navigation-list">
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <ul id="navigation-list" class="list">
+        <li class="list__item">
+          <a href="/space-tourism/home/" class="list__item-link underline-effect" id="home">
+            <span aria-hidden="true">00</span>Home
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="/space-tourism/pages/destination/" class="list__item-link underline-effect" id="destination">
+            <span aria-hidden="true">01</span>Destination
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="/space-tourism/pages/crew/" class="list__item-link underline-effect" id="crew">
+            <span aria-hidden="true">02</span>Crew
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="/space-tourism/pages/technology/" class="list__item-link underline-effect" id="technology">
+            <span aria-hidden="true">03</span>Technology
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container container--destination">
+    <h1 class="container__title"><span aria-hidden="true">01</span>Pick your destination</h1>
+    <div class="container__item">
+      <picture>
+        <source srcset="/public/images/destination/image-moon.webp" type="image/webp">
+        <img src="/public/images/destination/image-moon.png" type="image/png" alt="the moon">
+      </picture>
+    </div>
+    <article class="container__text">
+      <ul class="container__list">
+      </ul>
+      <h2 class="container__destination">Moon</h2>
+      <p class="container__description">See our planet as you’ve never seen it before. A perfect relaxing trip away to
+        help regain perspective and come back
+        refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+
+      <div class="container__stats">
+        <div class="container__distance">
+          <h3>Avg. Distance</h3>
+          <p>384,400 km</p>
+        </div>
+        <div class="container__travel-time">
+          <h3>Est. Travel Time</h3>
+          <p>3 days</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script type="module" src="/index.js"></script>
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>
