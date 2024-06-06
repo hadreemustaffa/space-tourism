@@ -5,19 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Space Tourism Website solution for frontendmentor.io">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/space-tourism/images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./sass/style.scss">
+  
   <title>Space Tourism</title>
+  <script type="module" crossorigin src="/space-tourism/assets/destination-b7d73644.js"></script>
+  <link rel="modulepreload" crossorigin href="/space-tourism/assets/index-653c9a5f.js">
+  <link rel="stylesheet" href="/space-tourism/assets/index-e64953f8.css">
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="./public/images/shared/logo.svg" alt="">
+      <img src="/space-tourism/assets/logo-43040818.svg" alt="">
     </div>
 
     <nav>
@@ -50,22 +53,37 @@
     </nav>
   </header>
 
-  <main class="container container--home">
-    <div class="container__text">
-      <h5>SO, YOU WANT TO TRAVEL TO</h5>
-      <h1>SPACE</h1>
-      <p>Let’s face it; if you want to go to space, you might as well genuinely go to
-        outer space and not hover kind of on the edge of it. Well sit back, and relax
-        because we’ll give you a truly out of this world experience!</p>
-    </div>
-
+  <main class="container container--destination">
+    <h1 class="container__title"><span aria-hidden="true">01</span>Pick your destination</h1>
     <div class="container__item">
-      <a href="/space-tourism/pages/destination/" class="btn btn-cta" id="btnExplore">Explore</a>
+      <picture>
+        <source srcset="/space-tourism/assets/image-moon-85007328.webp " type="image/webp">
+        <img src="/space-tourism/assets/image-moon-65df7a68.png" type="image/png" alt="the moon">
+      </picture>
     </div>
+    <article class="container__text">
+      <ul class="container__list">
+      </ul>
+      <h2 class="container__destination">Moon</h2>
+      <p class="container__description">See our planet as you’ve never seen it before. A perfect relaxing trip away to
+        help regain perspective and come back
+        refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
 
+      <div class="container__stats">
+        <div class="container__distance">
+          <h3>Avg. Distance</h3>
+          <p>384,400 km</p>
+        </div>
+        <div class="container__travel-time">
+          <h3>Est. Travel Time</h3>
+          <p>3 days</p>
+        </div>
+      </div>
+    </article>
   </main>
 
-  <script type="module" src="/index.js"></script>
+  
+  
 </body>
 
 </html>

@@ -6,9 +6,40 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 2.5rem;
+  padding: 2.5rem 2.5rem 0;
+}
 
-  @include md {
+ul.list {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70vw;
+  height: 100vh;
+  padding: min(20rem, 15vh) 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  backdrop-filter: blur(1.5rem);
+  transition: right 0.25s ease;
+  z-index: 100;
+
+  &[opened] {
+    right: 0;
+  }
+}
+
+.list__item-link {
+  display: flex;
+  position: relative;
+  padding-block: 2rem;
+
+  span {
+    padding-right: 1rem;
+  }
+}
+
+@include md {
+  header {
     padding: 0 0 0 2.5rem;
 
     nav {
@@ -17,7 +48,24 @@ header {
     }
   }
 
-  @include lg {
+  ul.list {
+    backdrop-filter: none;
+    flex-direction: row;
+    position: static;
+    height: fit-content;
+    width: auto;
+    padding: 0;
+  }
+
+  .list__item-link {
+    span {
+      display: none;
+    }
+  }
+}
+
+@include lg {
+  header {
     padding: 0;
     margin-top: 2em;
     display: grid;
@@ -47,48 +95,22 @@ header {
         grid-row: 1 / span 1;
         align-self: center;
         z-index: 200;
-        background-color: $clr-bg-line;
+        background-color: hsl(var(--clr-light-100), 0.25);
       }
     }
   }
-}
 
-ul.list {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70vw;
-  height: 100vh;
-  padding: min(20rem, 15vh) 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  backdrop-filter: blur(1.5rem);
-  transition: right 0.25s ease;
-  z-index: 100;
-
-  .btn {
-    padding: 3rem 0;
-  }
-
-  &[opened] {
-    right: 0;
-  }
-
-  @include md {
-    backdrop-filter: none;
-    flex-direction: row;
-    position: static;
-    height: fit-content;
-    width: auto;
-    padding: 0;
-  }
-
-  @include lg {
+  ul.list {
     backdrop-filter: blur(1.5rem);
-    background-color: $clr-bg-dimmed;
+    background-color: hsl(var(--clr-light-100), 0.05);
     grid-area: 1 / 2 / 1 / 5;
     place-self: end;
     padding-inline: clamp(4.625rem, -9.5rem + 25.5vi, 13.5rem);
+  }
+
+  .list__item-link {
+    span {
+      display: block;
+    }
   }
 }

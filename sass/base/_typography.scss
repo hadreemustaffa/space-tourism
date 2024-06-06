@@ -7,22 +7,31 @@ body {
 }
 
 .btn {
-  &.list__item.btn {
-    font-family: $ff-secondary;
-    font-size: var(--fs-400);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: $clr-text-white;
+  font-family: $ff-secondary;
+  font-size: var(--fs-400);
+  text-transform: uppercase;
+  color: $clr-text-white;
+  letter-spacing: 0.15em;
+}
 
+.btn-cta {
+  font-family: $ff-tertiary;
+  font-size: var(--fs-300);
+  color: $clr-text-dark;
+}
+
+a {
+  @extend .btn;
+  text-decoration: none;
+
+  &.list__item-link {
     & span {
       font-weight: bold;
     }
   }
 
-  &.btn-cta {
-    font-family: $ff-tertiary;
-    font-size: var(--fs-300);
-    text-transform: uppercase;
+  &:not(.btn-cta):visited {
+    color: $clr-text-white;
   }
 }
 
@@ -34,9 +43,11 @@ h1 {
 h2 {
   font-family: $ff-tertiary;
   font-size: var(--fs-800);
+  text-transform: uppercase;
+  color: $clr-text-white;
 }
 h3 {
-  font-family: $ff-tertiary;
+  font-family: $ff-primary;
   font-size: var(--fs-700);
 }
 h4 {
@@ -47,6 +58,32 @@ h5 {
   font-family: $ff-secondary;
   font-size: var(--fs-500);
   letter-spacing: 4.75px;
+}
+
+.container__title {
+  @extend h5;
+  text-transform: uppercase;
+}
+
+.container__title span {
+  color: hsl(var(--clr-light-100), 0.25);
+  font-weight: bold;
+  padding-right: 1rem;
+}
+
+.container__stats {
+  text-transform: uppercase;
+  h3 {
+    font-size: var(--fs-200);
+    text-transform: uppercase;
+    letter-spacing: 2.35px;
+  }
+
+  p {
+    font-family: $ff-tertiary;
+    font-size: var(--fs-700);
+    color: $clr-text-white;
+  }
 }
 
 @include sm {

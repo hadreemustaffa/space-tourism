@@ -4,20 +4,59 @@ body {
   background-color: $clr-bg-dark;
   display: grid;
   grid-template-rows: auto 1fr;
-  background-image: url("../../public/images/home/background-home-mobile.jpg");
+  background-image: url("/public/images/home/background-home-mobile.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  transition: background-image 0.35s ease-in-out;
 
-  @include md {
-    background-image: url("../../public/images/home/background-home-tablet.jpg");
+  &:has(main.container--destination) {
+    background-image: url("/public/images/destination/background-destination-mobile.jpg");
   }
-  @include lg {
-    background-image: url("../../public/images/home/background-home-desktop.jpg");
-    grid-template-columns: minmax(2.5rem, 13.5rem) auto minmax(2.5rem, 13.5rem);
+  &:has(main.container--crew) {
+    background-image: url("/public/images/crew/background-crew-mobile.jpg");
+  }
+  &:has(main.container--technology) {
+    background-image: url("/public/images/technology/background-technology-mobile.jpg");
   }
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+@include md {
+  body {
+    &:has(main.container--home) {
+      background-image: url("/public/images/home/background-home-tablet.jpg");
+    }
+    &:has(main.container--destination) {
+      background-image: url("/public/images/destination/background-destination-tablet.jpg");
+    }
+    &:has(main.container--crew) {
+      background-image: url("/public/images/crew/background-crew-tablet.jpg");
+    }
+    &:has(main.container--technology) {
+      background-image: url("/public/images/technology/background-technology-tablet.jpg");
+    }
+  }
+}
+
+@include lg {
+  body {
+    grid-template-columns: minmax(2.5rem, 13.5rem) auto minmax(2.5rem, 13.5rem);
+
+    &:has(main.container--home) {
+      background-image: url("/public/images/home/background-home-desktop.jpg");
+    }
+    &:has(main.container--destination) {
+      background-image: url("/public/images/destination/background-destination-desktop.jpg");
+    }
+    &:has(main.container--crew) {
+      background-image: url("/public/images/crew/background-crew-desktop.jpg");
+    }
+    &:has(main.container--technology) {
+      background-image: url("/public/images/technology/background-technology-desktop.jpg");
+    }
+  }
 }

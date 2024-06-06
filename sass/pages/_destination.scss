@@ -1,0 +1,40 @@
+@use "../abstracts/" as *;
+
+.container__stats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-top: 1px solid hsl(var(--clr-light-100), 0.25);
+  padding-top: 1.5rem;
+  justify-content: center;
+}
+
+@include md {
+  .container__stats {
+    flex-direction: row;
+  }
+}
+
+@include lg {
+  .container--destination {
+    .container__text {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .container__item {
+      grid-column: 1;
+      grid-row: 2;
+      place-self: center;
+      max-width: 85%;
+    }
+    .container__list {
+      justify-content: start;
+    }
+  }
+
+  .container__stats {
+    gap: 4.25rem;
+    justify-content: start;
+  }
+}
