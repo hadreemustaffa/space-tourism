@@ -1,5 +1,14 @@
 @use "../abstracts/" as *;
 
+.container--destination {
+  .container__item {
+    picture,
+    img {
+      transition: all 0.35s ease-in;
+    }
+  }
+}
+
 .container__stats {
   width: 100%;
   display: flex;
@@ -11,8 +20,10 @@
 }
 
 @include md {
-  .container__stats {
-    flex-direction: row;
+  .container--destination {
+    .container__stats {
+      flex-direction: row;
+    }
   }
 }
 
@@ -21,11 +32,12 @@
     .container__text {
       grid-column: 2;
       grid-row: 2;
+      justify-content: space-between;
+      align-self: flex-start;
     }
     .container__item {
       grid-column: 1;
       grid-row: 2;
-      place-self: center;
       max-width: 85%;
     }
     .container__list {

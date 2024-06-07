@@ -16,6 +16,10 @@
     @extend ::after;
     width: 100%;
   }
+
+  &:not(nav .list a).active::after {
+    content: "";
+  }
 }
 
 .sr-only {
