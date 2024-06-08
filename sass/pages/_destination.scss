@@ -20,10 +20,9 @@
 }
 
 @include md {
-  .container--destination {
-    .container__stats {
-      flex-direction: row;
-    }
+  .container__stats {
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 

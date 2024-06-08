@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+
+.container--crew {
+  position: relative;
+  .container__item {
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% - 3rem);
+      height: 1px;
+      left: 50%;
+      translate: -50% 0;
+      background-color: hsl(var(--clr-light-100), 0.25);
+    }
+  }
+
+  header {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+.container__slider {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  .container__slider-dots.btn {
+    width: 8px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: hsl(var(--clr-light-100), 0.25);
+
+    &[aria-selected="true"] {
+      background-color: $clr-bg-white;
+    }
+  }
+}

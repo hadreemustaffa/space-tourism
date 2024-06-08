@@ -16,7 +16,7 @@ body {
 
 .btn-cta {
   font-family: $ff-tertiary;
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
   color: $clr-text-dark;
 }
 
@@ -81,15 +81,32 @@ h5 {
 
   p {
     font-family: $ff-tertiary;
-    font-size: var(--fs-700);
+    font-size: 1.75rem;
     color: $clr-text-white;
+  }
+}
+
+.container--crew {
+  .container__text {
+    h2 {
+      @extend h4;
+      color: hsl(var(--clr-light-100), 0.5);
+    }
+    h2 + p {
+      font-family: $ff-tertiary;
+      font-size: var(--fs-700);
+      text-transform: uppercase;
+      color: $clr-text-white;
+    }
   }
 }
 
 @include sm {
   :root {
     --fs-800: 5rem;
-    --fs-600: 2.5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
     --fs-400: 1rem;
   }
 }
@@ -97,9 +114,9 @@ h5 {
 @include md {
   :root {
     --fs-800: 6.25rem;
-    --fs-600: 3.5rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
     --fs-500: 1.75rem;
     --fs-400: 1.125rem;
-    --fs-300: 2rem;
   }
 }
