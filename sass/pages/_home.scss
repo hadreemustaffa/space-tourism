@@ -2,6 +2,7 @@
 
 .container--home {
   justify-content: space-around;
+  place-items: center;
 
   .container__text {
     display: flex;
@@ -18,9 +19,19 @@
   }
 }
 
+@include md {
+  .container--home {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
 @include lg {
   .container--home {
     align-items: end;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 0;
     .container__text {
       grid-column: 1 / 1;
       grid-row: 1 / span 2;

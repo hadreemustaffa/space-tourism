@@ -20,6 +20,21 @@
 }
 
 @include md {
+  .container--destination {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+
+    .container__title {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: left;
+    }
+
+    .container__item {
+      place-self: center;
+    }
+  }
+
   .container__stats {
     flex-direction: row;
     justify-content: space-evenly;
@@ -28,15 +43,18 @@
 
 @include lg {
   .container--destination {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    .container__title {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
     .container__text {
-      grid-column: 2;
-      grid-row: 2;
       justify-content: space-between;
       align-self: flex-start;
     }
     .container__item {
-      grid-column: 1;
-      grid-row: 2;
+      place-self: center start;
       max-width: 85%;
     }
     .container__list {

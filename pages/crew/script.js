@@ -1,3 +1,5 @@
+import { fetchData } from '../..';
+
 const slider = document.querySelector('.container__slider');
 const sliderButtons = document.querySelectorAll('.container__slider-dots.btn');
 const containerItem = document.querySelector('.container__item');
@@ -8,9 +10,9 @@ const crewTitle = document.querySelector('.container__text-title');
 const crewName = document.querySelector('.container__text-name');
 const containerDescription = document.querySelector('.container__description');
 
-fetch('/space-tourism/data.json')
-  .then((response) => response.json())
-  .then((data) => {
+document.addEventListener('DOMContentLoaded', async () => {
+  const data = await fetchData();
+  if (data) {
     const { crew } = data;
 
     for (let i = 0; i < sliderButtons.length; i++) {
@@ -23,7 +25,10 @@ fetch('/space-tourism/data.json')
         containerDescription.textContent = crew[i].bio;
       });
     }
-  });
+  } else {
+    console.log('No data available');
+  }
+});
 
 const setActiveClass = (element) => {
   const activeButton = slider.querySelector("button[aria-selected='true']");

@@ -44,7 +44,8 @@ ul.list {
 
     nav {
       padding: 0 2.5rem;
-      background-color: $clr-bg-navigation;
+      backdrop-filter: blur(1.5rem);
+      background-color: hsl(var(--clr-light-100), 0.05);
     }
   }
 
@@ -84,6 +85,7 @@ ul.list {
       grid-template-columns: 1fr minmax(2.5rem, 13.5rem);
       padding: 0;
       background-color: transparent;
+      backdrop-filter: none;
 
       &::after {
         content: "";

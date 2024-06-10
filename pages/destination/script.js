@@ -1,3 +1,5 @@
+import { fetchData } from '../..';
+
 const container = document.querySelector('.container--destination');
 const containerList = document.querySelector('.container__list');
 const containerItem = document.querySelector('.container__item');
@@ -13,9 +15,10 @@ const destinationTravelTime = document.querySelector(
   '.container__travel-time p'
 );
 
-fetch('/space-tourism/data.json')
-  .then((response) => response.json())
-  .then((data) => {
+document.addEventListener('DOMContentLoaded', async () => {
+  const data = await fetchData();
+
+  if (data) {
     const { destination } = data;
 
     destination.forEach((destination) => {
@@ -29,6 +32,7 @@ fetch('/space-tourism/data.json')
     for (let i = 0; i < listItems.length; i++) {
       listItems[i].addEventListener('click', () => {
         setActiveClass(listItems[i]);
+        console.log(destination[i].images);
         pictureSource.srcset = destination[i].images.webp;
         img.src = destination[i].images.png;
         destinationName.textContent = destination[i].name;
@@ -37,8 +41,10 @@ fetch('/space-tourism/data.json')
         destinationTravelTime.textContent = destination[i].travel;
       });
     }
-  })
-  .catch((error) => console.log('Error:', error));
+  } else {
+    console.log('No data available');
+  }
+});
 
 const createDestinationList = (name) => {
   const li = document.createElement('li');

@@ -30,8 +30,8 @@
 
 @include md {
   .container {
+    display: grid;
     padding-inline: 0;
-    justify-content: space-between;
     padding: 5rem 2.5rem;
   }
 
@@ -52,8 +52,7 @@
     text-align: left;
 
     .container__title {
-      grid-column: 1 / span 2;
-      grid-row: 1;
+      grid-area: title;
     }
 
     .container__text {

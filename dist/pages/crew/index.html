@@ -12,8 +12,9 @@
     rel="stylesheet">
   
   <title>Space Tourism</title>
-  <script type="module" crossorigin src="/space-tourism/assets/index-844fcc33.js"></script>
-  <link rel="stylesheet" href="/space-tourism/assets/index-26401e84.css">
+  <script type="module" crossorigin src="/space-tourism/assets/crew-95158dbf.js"></script>
+  <link rel="modulepreload" crossorigin href="/space-tourism/assets/index-f7fba10f.js">
+  <link rel="stylesheet" href="/space-tourism/assets/index-b563b25c.css">
 </head>
 
 <body>
@@ -53,9 +54,43 @@
   </header>
 
   <main class="container container--crew">
+    <h1 class="container__title"><span aria-hidden="true">02</span>Meet your crew</h1>
 
+    <div class="container__item">
+      <picture>
+        <source srcset="/space-tourism/assets/image-douglas-hurley-d49c6980.webp " type="image/webp">
+        <img src="/space-tourism/assets/image-douglas-hurley-eefed9f8.png" type="image/png" alt="the moon">
+      </picture>
+    </div>
+
+    <div class="container__slider">
+      <button aria-selected="true" class="container__slider-dots btn">
+        <span class="sr-only">The commander</span>
+      </button>
+      <button aria-selected="false" class="container__slider-dots btn ">
+        <span class="sr-only">The mission specialist</span>
+      </button>
+      <button aria-selected="false" class="container__slider-dots btn ">
+        <span class="sr-only">The pilot</span>
+      </button>
+      <button aria-selected="false" class="container__slider-dots btn ">
+        <span class="sr-only">The crew engineer</span>
+      </button>
+    </div>
+
+    <article class="container__text">
+      <header>
+        <h2 class="container__text-title">Commander</h2>
+        <p class="container__text-name">Douglas Hurley</p>
+      </header>
+      <p class="container__description">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and
+        former NASA astronaut. He launched
+        into
+        space for the third time as commander of Crew Dragon Demo-2.</p>
+    </article>
   </main>
 
+  
   
 </body>
 
