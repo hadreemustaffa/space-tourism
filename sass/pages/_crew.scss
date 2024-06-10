@@ -48,11 +48,15 @@
   .container--crew {
     max-width: none;
     padding-bottom: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+
     .container__title {
+      grid-area: 1 / 1 / 1 / 1;
       text-align: left;
     }
     .container__item {
-      grid-area: image;
+      grid-area: 4 / 1 / 4 / 1;
       place-self: center;
       &::after {
         content: none;
@@ -60,30 +64,45 @@
     }
 
     .container__slider {
-      grid-area: list;
+      grid-area: 3 / 1 / 3 / 1;
     }
 
     .container__text {
-      grid-area: text;
+      grid-area: 2 / 1 / 2 / 1;
       place-self: center;
-      max-width: 40rem;
+      max-width: 42rem;
     }
   }
 }
 
 @include lg {
   .container--crew {
-    padding-bottom: 7rem;
-    grid-template-areas:
-      "title"
-      "text"
-      "list";
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding-bottom: 7rem;
     .container__item {
       position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+
+      picture img {
+        max-height: none;
+      }
     }
     .container__text {
+      max-width: none;
       place-self: start;
+
+      .container__name {
+        max-width: 65ch;
+      }
+      .container__description {
+        max-width: 45ch;
+      }
+    }
+    .container__slider {
+      justify-content: start;
     }
   }
 }
