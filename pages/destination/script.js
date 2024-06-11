@@ -1,7 +1,7 @@
-import { fetchData } from '../..';
+import { fetchData, setSelectedTab } from '../..';
 
-const container = document.querySelector('.container--destination');
-const containerList = document.querySelector('.container__list');
+const tablist = document.querySelector("[role='tablist']");
+const tabs = tablist.querySelectorAll("[role='tab']");
 const containerItem = document.querySelector('.container__item');
 const pictureSource = containerItem.querySelector('picture source');
 const img = containerItem.querySelector('img');
@@ -15,55 +15,47 @@ const destinationTravelTime = document.querySelector(
   '.container__travel-time p'
 );
 
+let focusIndex = 0;
 document.addEventListener('DOMContentLoaded', async () => {
   const data = await fetchData();
 
   if (data) {
     const { destination } = data;
 
-    destination.forEach((destination) => {
-      createDestinationList(destination.name);
-    });
-
-    const listItems = document.querySelectorAll('.container__list-item');
-
-    listItems[0].firstElementChild.classList.add('active');
-
-    for (let i = 0; i < listItems.length; i++) {
-      listItems[i].addEventListener('click', () => {
-        setActiveClass(listItems[i]);
-        console.log(destination[i].images);
-        pictureSource.srcset = destination[i].images.webp;
-        img.src = destination[i].images.png;
-        destinationName.textContent = destination[i].name;
-        destinationDescription.textContent = destination[i].description;
-        destinationDistance.textContent = destination[i].distance;
-        destinationTravelTime.textContent = destination[i].travel;
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', () => {
+        changeTab(destination, i);
       });
     }
+
+    tablist.addEventListener('keydown', (e) => {
+      changeTabIndex(e, destination);
+    });
   } else {
     console.log('No data available');
   }
 });
 
-const createDestinationList = (name) => {
-  const li = document.createElement('li');
-  li.classList.add('container__list-item');
-
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.classList.add('btn', 'btn-nav', 'underline-effect');
-  button.textContent = name;
-
-  li.appendChild(button);
-
-  containerList.appendChild(li);
+const changeTab = (data, index) => {
+  setSelectedTab(tabs[index]);
+  pictureSource.srcset = data[index].images.webp;
+  img.src = data[index].images.png;
+  destinationName.textContent = data[index].name;
+  destinationDescription.textContent = data[index].description;
+  destinationDistance.textContent = data[index].distance;
+  destinationTravelTime.textContent = data[index].travel;
 };
 
-const setActiveClass = (element) => {
-  const activeButton = containerList.querySelector('.active');
-  const button = element.querySelector('.btn-nav');
+const changeTabIndex = (e, data) => {
+  if (e.key === 'ArrowRight') {
+    focusIndex === tabs.length - 1 ? (focusIndex = 0) : focusIndex++;
+    tabs[focusIndex].focus();
+    changeTab(data, focusIndex);
+  }
 
-  activeButton?.classList.remove('active');
-  button.classList.add('active');
+  if (e.key === 'ArrowLeft') {
+    focusIndex === 0 ? (focusIndex = tabs.length - 1) : focusIndex--;
+    tabs[focusIndex].focus();
+    changeTab(data, focusIndex);
+  }
 };

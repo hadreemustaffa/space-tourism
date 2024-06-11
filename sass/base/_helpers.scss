@@ -12,12 +12,15 @@
   }
 
   &:hover::after,
-  &.active::after {
+  &.active::after,
+  &[aria-selected="true"]::after {
     @extend ::after;
     width: 100%;
   }
 
-  &:not(nav .list a).active::after {
+  // remove main nav underline on smaller screen
+  &:not(nav .list a).active::after,
+  &[aria-selected="true"]::after {
     content: "";
   }
 }

@@ -32,15 +32,25 @@ export async function fetchData() {
   }
 }
 
-const setActiveClass = (id) => {
+export const setSelectedTab = (element) => {
+  const currentTab = document.querySelector("[aria-selected='true']");
+
+  currentTab?.setAttribute('aria-selected', 'false');
+  currentTab.setAttribute('tabindex', '-1');
+  element.setAttribute('aria-selected', 'true');
+  element.setAttribute('tabindex', '0');
+};
+
+const setActivePage = (id) => {
   const link = document.getElementById(`${id}`);
+
   if (main.classList.contains(`container--${id}`)) {
     link.classList.add('active');
   }
 };
 
 navLinks.forEach((link) => {
-  setActiveClass(link.id);
+  setActivePage(link.id);
 });
 
 toggleButton.addEventListener('click', () => {
