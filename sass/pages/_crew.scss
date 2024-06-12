@@ -31,17 +31,6 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-
-  .container__slider-dots.btn {
-    width: 16px;
-    height: 16px;
-    border-radius: 100%;
-    background-color: hsl(var(--clr-light-100), 0.25);
-
-    &[aria-selected="true"] {
-      background-color: $clr-bg-white;
-    }
-  }
 }
 
 @include md {

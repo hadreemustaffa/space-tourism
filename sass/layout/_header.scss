@@ -1,6 +1,6 @@
 @use "../abstracts/" as *;
 
-header {
+header:not(article header) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -39,7 +39,7 @@ ul.list {
 }
 
 @include md {
-  header {
+  header:not(article header) {
     padding: 0 0 0 2.5rem;
 
     nav {

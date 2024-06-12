@@ -35,40 +35,34 @@ a {
   }
 }
 
-h1 {
-  font-family: $ff-tertiary;
-  font-size: var(--fs-900);
-  color: $clr-text-white;
-}
 h2 {
   font-family: $ff-tertiary;
   font-size: var(--fs-800);
   text-transform: uppercase;
   color: $clr-text-white;
 }
-h3 {
-  font-family: $ff-primary;
-  font-size: var(--fs-700);
-}
-h4 {
-  font-family: $ff-tertiary;
-  font-size: var(--fs-600);
-}
-h5 {
+
+.container__title,
+.container--home .container__text-title,
+.container--technology .container__text-title {
   font-family: $ff-secondary;
   font-size: var(--fs-500);
   letter-spacing: 4.75px;
-}
-
-.container__title {
-  @extend h5;
   text-transform: uppercase;
+  color: $clr-text-white;
 }
 
 .container__title span {
   color: hsl(var(--clr-light-100), 0.25);
   font-weight: bold;
   padding-right: 1rem;
+}
+
+.container--home .container__text-title span {
+  font-family: $ff-tertiary;
+  font-size: var(--fs-900);
+  color: $clr-text-white;
+  display: block;
 }
 
 .container__stats {
@@ -87,18 +81,18 @@ h5 {
 }
 
 .container--crew {
-  .container__text {
-    h2 {
-      @extend h4;
-      color: hsl(var(--clr-light-100), 0.5);
-    }
-    h2 + p {
-      font-family: $ff-tertiary;
-      font-size: var(--fs-700);
-      text-transform: uppercase;
-      color: $clr-text-white;
-    }
+  .container__text-title {
+    font-family: $ff-tertiary;
+    font-size: var(--fs-600);
+    color: hsl(var(--clr-light-100), 0.5);
   }
+}
+
+.container__text-name {
+  font-family: $ff-tertiary;
+  font-size: var(--fs-700);
+  text-transform: uppercase;
+  color: $clr-text-white;
 }
 
 @include sm {

@@ -34,13 +34,6 @@
     padding-inline: 0;
     padding: 5rem 2.5rem;
   }
-
-  .container__title {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-
-    align-self: flex-start;
-  }
 }
 
 @include lg {
@@ -52,10 +45,6 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
     text-align: left;
-
-    .container__title {
-      grid-area: title;
-    }
   }
 }
 
