@@ -60,24 +60,25 @@
       </picture>
     </div>
 
-    <article class="container__text">
-      <div role="tablist" class="container__list">
-        <button type="button" aria-selected="true" role="tab" class="btn btn-nav underline-effect">
-          Moon
-        </button>
+    <div role="tablist" class="container__list">
+      <button type="button" aria-selected="true" role="tab" tabindex="0" class="btn btn-nav underline-effect">
+        Moon
+      </button>
 
-        <button type="button" aria-selected="false" role="tab" class="btn btn-nav underline-effect">
-          Mars
-        </button>
+      <button type="button" aria-selected="false" role="tab" tabindex="-1" class="btn btn-nav underline-effect">
+        Mars
+      </button>
 
-        <button type="button" aria-selected="false" role="tab" class="btn btn-nav underline-effect">
-          Europa
-        </button>
+      <button type="button" aria-selected="false" role="tab" tabindex="-1" class="btn btn-nav underline-effect">
+        Europa
+      </button>
 
-        <button type="button" aria-selected="false" role="tab" class="btn btn-nav underline-effect">
-          Titan
-        </button>
-      </div>
+      <button type="button" aria-selected="false" role="tab" tabindex="-1" class="btn btn-nav underline-effect">
+        Titan
+      </button>
+    </div>
+
+    <article role="tabpanel" tabindex="0" class="container__text">
       <h2 class="container__destination">Moon</h2>
       <p class="container__description">See our planet as you’ve never seen it before. A perfect relaxing trip away to
         help regain perspective and come back
@@ -97,7 +98,6 @@
   </main>
 
   <script type="module" src="/index.js"></script>
-  <script type="module" src="./script.js"></script>
 </body>
 
 </html>
