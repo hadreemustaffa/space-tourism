@@ -12,9 +12,8 @@
     rel="stylesheet">
   
   <title>Space Tourism</title>
-  <script type="module" crossorigin src="/space-tourism/assets/crew-95158dbf.js"></script>
-  <link rel="modulepreload" crossorigin href="/space-tourism/assets/index-f7fba10f.js">
-  <link rel="stylesheet" href="/space-tourism/assets/index-b563b25c.css">
+  <script type="module" crossorigin src="/space-tourism/assets/index-f2c4ef3a.js"></script>
+  <link rel="stylesheet" href="/space-tourism/assets/index-c8580d4f.css">
 </head>
 
 <body>
@@ -59,26 +58,26 @@
     <div class="container__item">
       <picture>
         <source srcset="/space-tourism/assets/image-douglas-hurley-d49c6980.webp " type="image/webp">
-        <img src="/space-tourism/assets/image-douglas-hurley-eefed9f8.png" type="image/png" alt="the moon">
+        <img src="/space-tourism/assets/image-douglas-hurley-eefed9f8.png" type="image/png" alt="image of the commander">
       </picture>
     </div>
 
-    <div class="container__slider">
-      <button aria-selected="true" class="container__slider-dots btn">
+    <div role="tablist" class="container__slider">
+      <button aria-selected="true" role="tab" tabindex="0" class="container__slider-dots btn">
         <span class="sr-only">The commander</span>
       </button>
-      <button aria-selected="false" class="container__slider-dots btn ">
+      <button aria-selected="false" role="tab" tabindex="-1" class="container__slider-dots btn ">
         <span class="sr-only">The mission specialist</span>
       </button>
-      <button aria-selected="false" class="container__slider-dots btn ">
+      <button aria-selected="false" role="tab" tabindex="-1" class="container__slider-dots btn ">
         <span class="sr-only">The pilot</span>
       </button>
-      <button aria-selected="false" class="container__slider-dots btn ">
+      <button aria-selected="false" role="tab" tabindex="-1" class="container__slider-dots btn ">
         <span class="sr-only">The crew engineer</span>
       </button>
     </div>
 
-    <article class="container__text">
+    <article role="tabpanel" class="container__text" tabindex="0">
       <header>
         <h2 class="container__text-title">Commander</h2>
         <p class="container__text-name">Douglas Hurley</p>
@@ -88,9 +87,9 @@
         into
         space for the third time as commander of Crew Dragon Demo-2.</p>
     </article>
+
   </main>
 
-  
   
 </body>
 

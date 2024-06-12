@@ -10,7 +10,6 @@ async function fetchData() {
   // Check if data is already in local storage
   const cachedData = localStorage.getItem(localStorageKey);
   if (cachedData) {
-    console.log('Using cached data');
     return JSON.parse(cachedData);
   }
 
@@ -93,13 +92,17 @@ if (data && currentPageId != 'home') {
   const changeTab = () => {
     setSelectedTab(tabs[focusIndex]);
 
+    function getImageUrl(name) {
+      return new URL(`${name}`, import.meta.url).href;
+    }
+
     if (currentPageId === 'destination') {
       const destinationName = document.querySelector('.container__destination');
       const distance = document.querySelector('.container__distance p');
       const travelTime = document.querySelector('.container__travel-time p');
 
-      pictureSource.srcset = destination[focusIndex].images.webp;
-      img.src = destination[focusIndex].images.png;
+      pictureSource.srcset = getImageUrl(destination[focusIndex].images.webp);
+      img.src = getImageUrl(destination[focusIndex].images.png);
       destinationName.textContent = destination[focusIndex].name;
       description.textContent = destination[focusIndex].description;
       distance.textContent = destination[focusIndex].distance;
@@ -109,16 +112,18 @@ if (data && currentPageId != 'home') {
     if (currentPageId === 'crew') {
       const crewTitle = document.querySelector('.container__text-title');
 
-      pictureSource.srcset = crew[focusIndex].images.webp;
-      img.src = crew[focusIndex].images.png;
+      pictureSource.srcset = getImageUrl(crew[focusIndex].images.webp);
+      img.src = getImageUrl(crew[focusIndex].images.png);
       crewTitle.textContent = crew[focusIndex].role;
       tabName.textContent = crew[focusIndex].name;
       description.textContent = crew[focusIndex].bio;
     }
 
     if (currentPageId === 'technology') {
-      pictureSource.srcset = technology[focusIndex].images.portrait;
-      img.src = technology[focusIndex].images.landscape;
+      pictureSource.srcset = getImageUrl(
+        technology[focusIndex].images.portrait
+      );
+      img.src = getImageUrl(technology[focusIndex].images.landscape);
       tabName.textContent = technology[focusIndex].name;
       description.textContent = technology[focusIndex].description;
     }

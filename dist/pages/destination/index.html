@@ -12,9 +12,8 @@
     rel="stylesheet">
   
   <title>Space Tourism</title>
-  <script type="module" crossorigin src="/space-tourism/assets/destination-8518a14a.js"></script>
-  <link rel="modulepreload" crossorigin href="/space-tourism/assets/index-f7fba10f.js">
-  <link rel="stylesheet" href="/space-tourism/assets/index-b563b25c.css">
+  <script type="module" crossorigin src="/space-tourism/assets/index-f2c4ef3a.js"></script>
+  <link rel="stylesheet" href="/space-tourism/assets/index-c8580d4f.css">
 </head>
 
 <body>
@@ -63,8 +62,25 @@
       </picture>
     </div>
 
-    <article class="container__text">
-      <ul class="container__list"></ul>
+    <div role="tablist" class="container__list">
+      <button type="button" aria-selected="true" role="tab" tabindex="0" class="btn btn-nav underline-effect">
+        Moon
+      </button>
+
+      <button type="button" aria-selected="false" role="tab" tabindex="-1" class="btn btn-nav underline-effect">
+        Mars
+      </button>
+
+      <button type="button" aria-selected="false" role="tab" tabindex="-1" class="btn btn-nav underline-effect">
+        Europa
+      </button>
+
+      <button type="button" aria-selected="false" role="tab" tabindex="-1" class="btn btn-nav underline-effect">
+        Titan
+      </button>
+    </div>
+
+    <article role="tabpanel" tabindex="0" class="container__text">
       <h2 class="container__destination">Moon</h2>
       <p class="container__description">See our planet as you’ve never seen it before. A perfect relaxing trip away to
         help regain perspective and come back
@@ -83,7 +99,6 @@
     </article>
   </main>
 
-  
   
 </body>
 
