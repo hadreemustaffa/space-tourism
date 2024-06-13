@@ -4,8 +4,13 @@
   position: relative;
   margin: 0 auto;
   max-width: 36rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 24px 300px 24px auto;
 
   .container__item {
+    align-self: end;
+    justify-self: center;
     &::after {
       content: "";
       position: absolute;
@@ -17,8 +22,12 @@
     }
 
     picture img {
-      max-height: 360px;
+      max-height: 300px;
     }
+  }
+
+  .container__text {
+    align-self: start;
   }
 
   header {
@@ -67,7 +76,7 @@
 @include lg {
   .container--crew {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr auto;
     padding-bottom: 7rem;
     .container__item {
       position: absolute;
@@ -81,7 +90,7 @@
     }
     .container__text {
       max-width: none;
-      place-self: start;
+      place-self: center start;
 
       .container__name {
         max-width: 65ch;
