@@ -73,6 +73,15 @@ const setSelectedTab = (element) => {
   element.setAttribute('tabindex', '0');
 };
 
+const addAnimation = (elementArr) => {
+  elementArr.forEach((element) => {
+    element.classList.add('fade-in');
+    element.onanimationend = function () {
+      this.classList.remove('fade-in');
+    };
+  });
+};
+
 const data = await fetchData();
 
 if (data && currentPageId != 'home') {
@@ -92,9 +101,9 @@ if (data && currentPageId != 'home') {
   const changeTab = () => {
     setSelectedTab(tabs[focusIndex]);
 
-    function getImageUrl(name) {
+    const getImageUrl = (name) => {
       return new URL(`${name}`, import.meta.url).href;
-    }
+    };
 
     if (currentPageId === 'destination') {
       const destinationName = document.querySelector('.container__destination');
@@ -134,11 +143,13 @@ if (data && currentPageId != 'home') {
     if (e.key === 'ArrowRight') {
       focusIndex === tabs.length - 1 ? (focusIndex = 0) : focusIndex++;
       changeTab();
+      addAnimation([tabPanel, item]);
     }
 
     if (e.key === 'ArrowLeft') {
       focusIndex === 0 ? (focusIndex = tabs.length - 1) : focusIndex--;
       changeTab();
+      addAnimation([tabPanel, item]);
     }
   };
 
@@ -146,6 +157,7 @@ if (data && currentPageId != 'home') {
     tab.addEventListener('click', () => {
       focusIndex = tabIndex;
       changeTab();
+      addAnimation([tabPanel, item]);
     });
   });
 

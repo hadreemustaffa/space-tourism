@@ -2,9 +2,8 @@
 
 .container--destination {
   .container__item {
-    picture,
-    img {
-      transition: all 0.35s ease-in;
+    picture {
+      animation: rotate 180s linear infinite;
     }
   }
 }
@@ -79,5 +78,15 @@
   .container__stats {
     gap: 4.25rem;
     justify-content: start;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
