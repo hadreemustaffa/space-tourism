@@ -13,6 +13,7 @@
 button[role="tab"] {
   display: flex;
   position: relative;
+  transition: all 0.5s ease;
 
   span {
     padding-right: 1rem;
@@ -27,11 +28,19 @@ button[role="tab"] {
   height: 16px;
   border-radius: 100%;
   background-color: hsl(var(--clr-light-100), 0.25);
+
+  &:hover {
+    background-color: hsl(var(--clr-light-100), 0.5);
+  }
 }
 .container--technology button[role="tab"] {
   padding: 0.5rem 1rem;
   border: 1px solid hsl(var(--clr-light-100), 0.25);
   border-radius: 100%;
+
+  &:hover {
+    border-color: hsl(var(--clr-light-100), 0.5);
+  }
 }
 
 .container--crew button[role="tab"],

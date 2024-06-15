@@ -76,9 +76,10 @@ const setSelectedTab = (element) => {
 const addAnimation = (elementArr) => {
   elementArr.forEach((element) => {
     element.classList.add('fade-in');
-    element.onanimationend = function () {
-      this.classList.remove('fade-in');
-    };
+
+    element.addEventListener('animationend', () => {
+      element.classList.remove('fade-in');
+    });
   });
 };
 
